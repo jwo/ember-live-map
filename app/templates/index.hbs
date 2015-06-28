@@ -1,0 +1,12 @@
+{{outlet}}
+{{leaflet-map markers=model tileUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}}
+
+<ul>
+
+{{#each model key="id" as |location|}}
+  <li>{{location.id}}</li>
+{{else}}
+  <li>Sorry, nobody is here.</li>
+{{/each}}
+
+</ul>
