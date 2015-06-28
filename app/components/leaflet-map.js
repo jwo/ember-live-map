@@ -2,6 +2,7 @@ import Ember from 'ember';
 import EmberLeafletComponent from 'ember-leaflet/components/leaflet-map';
 import MarkerCollectionLayer from 'ember-leaflet/layers/marker-collection';
 import TileLayer from 'ember-leaflet/layers/tile';
+import MyMarkerLayer from '../layers/my-marker-layer';
 
 
 export default EmberLeafletComponent.extend({
@@ -13,7 +14,11 @@ export default EmberLeafletComponent.extend({
      }),
      MarkerCollectionLayer.extend({
        //child layer holds `controller` property here
-       content: Ember.computed.alias('controller.markers')
+       content: Ember.computed.alias('controller.markers'),
+       itemLayerClass: MyMarkerLayer
      })
+
+
+
  ]
 });
